@@ -21,3 +21,10 @@ module.exports.addPlayer = (req, res) => {
         .then(player => res.json(player))
         .catch(err => res.status(400).json(err));
 }
+
+module.exports.deletePlayer =(req, res) => {
+    console.log(req.params.id)
+    Player.deleteOne({_id: req.params.id})
+            .then(deleteConfirmation => res.json(deleteConfirmation))
+            .catch(err => res.json(err));
+}

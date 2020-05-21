@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from '@reach/router';
+import DeletePlayer from '../Components/Delete';
 import axios from 'axios';
 
 
@@ -21,8 +22,9 @@ export default () => {
 
     useEffect (() => {grabPlayer()}, [])
 
-    const removeFromDom =playerId => {
-        setPlayer(player.filter(author => player._id != playerId));
+    const removeFromDom = playerId => {
+        console.log("Bleh", playerId)
+        setPlayer(player.filter(player => player._id !== playerId));
         grabPlayer();
     }
     return (
@@ -50,7 +52,7 @@ export default () => {
                                 return (<tr key = {i}>
                                     <td>{player.name}</td>
                                     <td>{player.position}</td>
-                                    <td>Delete Method</td>
+                                    <td><DeletePlayer playerId = {player._id} successCallback = {() => removeFromDom(player._id)}/></td>
                                 </tr>
                                 )})}
                     </tbody>
