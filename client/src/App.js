@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router} from '@reach/router';
+import {Router, Redirect} from '@reach/router';
 import ViewAll from './Views/ViewAll';
 import Add from './Views/Add';
 import './App.css';
@@ -10,6 +10,7 @@ function App() {
       <Router>
         <ViewAll path ="/players/list"/>
         <Add path = "/players/addplayer"/>
+        <Redirect from="/" to="/players/list" noThrow/>
       </Router>
     </div>
   );

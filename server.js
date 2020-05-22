@@ -11,6 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 const AllPlayers = require('./server/routes/player.routes');
 AllPlayers(app);
 
-app.listen(1337, () => {
-    console.log("You're listening to 1337, now go away")
+app.listen(1336, () => {
+    console.log("You're listening to 1336, now go away")
 })

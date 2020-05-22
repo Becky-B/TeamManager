@@ -10,7 +10,7 @@ export default () => {
     const [errors, setErrors] = useState([]);
 
     const addPlayer = ({name, position}) => {
-        axios.post('http://localhost:1337/api/players/addplayer', {
+        axios.post('http://localhost:1336/api/players/addplayer', {
             name,
             position
         })

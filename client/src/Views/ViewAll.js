@@ -12,7 +12,7 @@ export default () => {
     const [loaded, setLoaded] = useState(false);
 
     function grabPlayer (){
-        axios.get('http://localhost:1337/api/players/list')
+        axios.get('http://localhost:1336/api/players/list')
             .then(res =>{
                 console.log(res.data);
                 setPlayer(res.data);

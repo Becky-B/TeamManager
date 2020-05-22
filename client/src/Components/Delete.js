@@ -5,7 +5,7 @@ export default props => {
     const {playerId, successCallback} = props;
 
     const DeletePlayer = e => {
-        axios.delete('http://localhost:1337/api/players/' + playerId)
+        axios.delete('http://localhost:1336/api/players/' + playerId)
         .then(res => {
             console.log(res)
             successCallback();
